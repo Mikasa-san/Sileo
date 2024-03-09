@@ -8,37 +8,6 @@ jobs:
     name: Build and Upload Sileo
     runs-on: macos-12
     steps:
-
-      - name: Checkout
-        uses: actions/checkout@master
-        with:
-          submodules: recursive
-          token: ${{ secrets.SILEO_PAT }}
-      - name: Import all certificates
-        env:
-          DEVELOPMENT_PASSWORD: ${{ secrets.DEVELOPMENT_PASSWORD }}
-          DEVELOPMENT_CERTIFICATE: ${{ secrets.DEVELOPMENT_CERTIFICATE }}
-          DISTRIBUTION_CERTIFICATE: ${{ secrets.DISTRIBUTION_CERTIFICATE }}
-          DISTRIBUTION_PASSWORD: ${{ secrets.DISTRIBUTION_PASSWORD }}
-          KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
-        run: |
-          security create-keychain -p "" build.keychain
-          security list-keychains -s build.keychain
-          security default-keychain -s build.keychain
-          security unlock-keychain -p "" build.keychain
-          security set-keychain-settings
-          security import <(echo $DEVELOPMENT_CERTIFICATE | base64 --decode) \
-                          -f pkcs12 \
-                          -k build.keychain \
-                          -P $DEVELOPMENT_PASSWORD \
-                          -T /usr/bin/codesign
-          security import <(echo $DISTRIBUTION_CERTIFICATE | base64 --decode) \
-                          -f pkcs12 \
-                          -k build.keychain \
-                          -P $DISTRIBUTION_PASSWORD \
-                          -T /usr/bin/codesign
-          security set-key-partition-list -S apple-tool:,apple: -s -k "" build.keychain
-
       - name: Setup Procursus Bootstrap (install)
         run: |
           wget https://apt.procurs.us/bootstraps/big_sur/bootstrap-darwin-amd64.tar.zst
