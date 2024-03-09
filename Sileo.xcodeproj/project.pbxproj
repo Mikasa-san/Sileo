@@ -4900,6 +4900,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_STATIC_ANALYZER_MODE = deep;
+				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGN_ENTITLEMENTS = "Sileo/Sileo-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
@@ -4952,6 +4953,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_STATIC_ANALYZER_MODE = deep;
+				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGN_ENTITLEMENTS = "Sileo/Sileo-Mac.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
@@ -5358,6 +5360,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGN_ENTITLEMENTS = "Sileo/Sileo-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -5415,6 +5418,7 @@
 				ASSETCATALOG_COMPILER_OPTIMIZATION = space;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_STATIC_ANALYZER_MODE = deep;
+				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGN_ENTITLEMENTS = "Sileo/Sileo-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 7J8FJX4SRX;
